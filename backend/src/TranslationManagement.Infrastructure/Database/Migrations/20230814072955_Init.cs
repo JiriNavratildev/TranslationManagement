@@ -17,9 +17,9 @@ namespace TranslationManagement.Infrastructure.Database.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
-                    HourlyRate = table.Column<string>(type: "TEXT", nullable: false),
+                    HourlyRate = table.Column<decimal>(type: "TEXT", nullable: false),
                     Status = table.Column<int>(type: "INTEGER", nullable: false),
-                    CreditCardNumber = table.Column<string>(type: "TEXT", nullable: false)
+                    CreditCardNumberEncrypted = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

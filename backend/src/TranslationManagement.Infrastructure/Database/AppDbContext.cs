@@ -4,8 +4,7 @@ using TranslationManagerClean.Domain.Translators;
 
 namespace TranslationManagement.Infrastructure.Database;
 
-// dotnet ef migrations add Init -o Database/Migrations --startup-project ../TranslationManagerClean.Api
-// dotnet ef database update --startup-project ../RTranslationManagerClean.Api
+// dotnet ef migrations add Init -o Database/Migrations --startup-project ../TranslationManagement.Api
 public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) :

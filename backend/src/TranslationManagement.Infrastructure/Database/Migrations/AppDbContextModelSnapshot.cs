@@ -17,7 +17,7 @@ namespace TranslationManagement.Infrastructure.Database.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
 
-            modelBuilder.Entity("TranslationManagement.Domain.TranslationJobs.TranslationJob", b =>
+            modelBuilder.Entity("TranslationManagerClean.Domain.TranslationJobs.TranslationJob", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,18 +50,17 @@ namespace TranslationManagement.Infrastructure.Database.Migrations
                     b.ToTable("TranslationJobs");
                 });
 
-            modelBuilder.Entity("TranslationManagement.Domain.Translators.Translator", b =>
+            modelBuilder.Entity("TranslationManagerClean.Domain.Translators.Translator", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("CreditCardNumber")
+                    b.Property<string>("CreditCardNumberEncrypted")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("HourlyRate")
-                        .IsRequired()
+                    b.Property<decimal>("HourlyRate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -76,16 +75,16 @@ namespace TranslationManagement.Infrastructure.Database.Migrations
                     b.ToTable("Translators");
                 });
 
-            modelBuilder.Entity("TranslationManagement.Domain.TranslationJobs.TranslationJob", b =>
+            modelBuilder.Entity("TranslationManagerClean.Domain.TranslationJobs.TranslationJob", b =>
                 {
-                    b.HasOne("TranslationManagement.Domain.Translators.Translator", "Translator")
+                    b.HasOne("TranslationManagerClean.Domain.Translators.Translator", "Translator")
                         .WithMany("TranslationJobs")
                         .HasForeignKey("TranslatorId");
 
                     b.Navigation("Translator");
                 });
 
-            modelBuilder.Entity("TranslationManagement.Domain.Translators.Translator", b =>
+            modelBuilder.Entity("TranslationManagerClean.Domain.Translators.Translator", b =>
                 {
                     b.Navigation("TranslationJobs");
                 });

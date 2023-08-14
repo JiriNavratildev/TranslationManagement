@@ -20,10 +20,11 @@ public abstract class InfrastructureModule
     {
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-        services.AddScoped<INotificationService, UnreliableNotificationService>();
+        services.AddScoped<INotificationService, UNSNotificationService>();
         services.AddScoped<ITranslationJobRepository, TranslationJobRepository>();
         services.AddScoped<ITranslatorRepository, TranslatorRepository>();
         services.AddDbContext<AppDbContext>(options => 
             options.UseSqlite(configuration.GetConnectionString("Default")));
+        services.AddScoped<INotificationService, UNSNotificationService>();
     }
 }
