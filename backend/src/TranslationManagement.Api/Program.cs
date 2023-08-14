@@ -7,11 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(p =>
+    p.AddPolicy("enableAll", policy => { policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader(); }));
 
 ApplicationModule.ConfigureServices(builder.Services);
 InfrastructureModule.ConfigureServices(builder.Services, builder.Configuration);
 
 var app = builder.Build();
+
+app.UseCors("enableAll");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

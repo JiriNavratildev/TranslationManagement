@@ -1,8 +1,8 @@
-namespace TranslationManagerClean.Domain.TranslationJobs;
+namespace TranslationManagement.Domain.TranslationJobs;
 
 public enum TranslationJobStatus
 {
     NEW,
-    INPROGRESS,
+    IN_PROGRESS,
     COMPLETED
 }

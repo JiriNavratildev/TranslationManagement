@@ -1,5 +1,6 @@
 using FluentAssertions;
 using NUnit.Framework;
+using TranslationManagement.Domain.TranslationJobs;
 using TranslationManagerClean.Domain.TranslationJobs;
 
 namespace TranslationManagement.Domain.Tests;
@@ -40,10 +41,10 @@ public class TranslationJobTests
         const string originalContent = "Sample content";
         var translationJob = TranslationJob.Create(customerName, originalContent);
         
-        var canUpdate = translationJob.TryUpdateStatus(TranslationJobStatus.INPROGRESS);
+        var canUpdate = translationJob.TryUpdateStatus(TranslationJobStatus.IN_PROGRESS);
 
         canUpdate.Should().BeTrue();
-        translationJob.Status.Should().Be(TranslationJobStatus.INPROGRESS);
+        translationJob.Status.Should().Be(TranslationJobStatus.IN_PROGRESS);
     }
     
     [Test]

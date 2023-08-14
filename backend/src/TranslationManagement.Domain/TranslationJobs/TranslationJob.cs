@@ -1,3 +1,4 @@
+using TranslationManagement.Domain.TranslationJobs;
 using TranslationManagerClean.Domain.Common;
 using TranslationManagerClean.Domain.TranslationJobs.Rules;
 using TranslationManagerClean.Domain.Translators;
