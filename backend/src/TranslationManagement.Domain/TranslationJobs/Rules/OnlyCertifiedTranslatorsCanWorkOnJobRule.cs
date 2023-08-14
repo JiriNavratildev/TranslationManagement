@@ -1,7 +1,7 @@
-using TranslationManagerClean.Domain.Common;
-using TranslationManagerClean.Domain.Translators;
+using TranslationManagement.Domain.Common;
+using TranslationManagement.Domain.Translators;
 
-namespace TranslationManagerClean.Domain.TranslationJobs.Rules;
+namespace TranslationManagement.Domain.TranslationJobs.Rules;
 
 public class OnlyCertifiedTranslatorsCanWorkOnJobRule : IBusinessRule
 {

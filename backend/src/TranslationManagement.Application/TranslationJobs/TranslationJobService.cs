@@ -4,8 +4,8 @@ using TranslationManagement.Application.Files;
 using TranslationManagement.Application.Notifications;
 using TranslationManagement.Application.TranslationJobs.Dtos;
 using TranslationManagement.Application.UnitOfWork;
-using TranslationManagerClean.Domain.TranslationJobs;
-using TranslationManagerClean.Domain.Translators;
+using TranslationManagement.Domain.TranslationJobs;
+using TranslationManagement.Domain.Translators;
 
 namespace TranslationManagement.Application.TranslationJobs;
 

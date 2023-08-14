@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using TranslationManagement.Domain.Translators;
 using TranslationManagement.Infrastructure.Database;
-using TranslationManagerClean.Domain.Translators;
 
 namespace TranslationManagement.Infrastructure.Domain.Translators;
 

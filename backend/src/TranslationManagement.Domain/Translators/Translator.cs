@@ -1,7 +1,7 @@
-using TranslationManagerClean.Domain.Common;
-using TranslationManagerClean.Domain.TranslationJobs;
+using TranslationManagement.Domain.Common;
+using TranslationManagement.Domain.TranslationJobs;
 
-namespace TranslationManagerClean.Domain.Translators;
+namespace TranslationManagement.Domain.Translators;
 
 public class Translator : BaseEntity
 {

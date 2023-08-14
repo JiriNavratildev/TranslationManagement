@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TranslationManagerClean.Domain.Common;
+using TranslationManagement.Domain.Common;
 
 namespace TranslationManagement.Infrastructure.Database;
 

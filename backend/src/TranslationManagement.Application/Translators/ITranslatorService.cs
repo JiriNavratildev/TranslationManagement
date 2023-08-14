@@ -1,6 +1,6 @@
 using TranslationManagement.Application.TranslationJobs.Dtos;
 using TranslationManagement.Application.Translators.Dtos;
-using TranslationManagerClean.Domain.Translators;
+using TranslationManagement.Domain.Translators;
 
 namespace TranslationManagement.Application.Translators;
 

@@ -1,4 +1,4 @@
-namespace TranslationManagerClean.Domain.Translators;
+namespace TranslationManagement.Domain.Translators;
 
 public enum TranslatorStatus
 {

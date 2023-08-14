@@ -1,4 +1,4 @@
-using TranslationManagerClean.Domain.Translators;
+using TranslationManagement.Domain.Translators;
 
 namespace TranslationManagement.Application.Translators.Dtos;
 

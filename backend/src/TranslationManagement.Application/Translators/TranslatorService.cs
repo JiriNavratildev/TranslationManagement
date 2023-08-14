@@ -3,7 +3,7 @@ using TranslationManagement.Application.Common;
 using TranslationManagement.Application.TranslationJobs.Dtos;
 using TranslationManagement.Application.Translators.Dtos;
 using TranslationManagement.Application.UnitOfWork;
-using TranslationManagerClean.Domain.Translators;
+using TranslationManagement.Domain.Translators;
 
 namespace TranslationManagement.Application.Translators;
 
@@ -21,7 +21,7 @@ public class TranslatorService : BaseService, ITranslatorService
     public async Task<List<TranslatorDto>> GetAsync()
     {
         var result = await translatorRepository.GetAll()
-            .Select(t => new TranslatorDto(t.Id, t.Name, t.HourlyRate))
+            .Select(t => new TranslatorDto(t.Id, t.Name, t.HourlyRate, t.Status))
             .ToListAsync();
 
         return result;
@@ -30,8 +30,9 @@ public class TranslatorService : BaseService, ITranslatorService
     public async Task<TranslatorDto?> GetByNameAsync(string name)
     {
         var result = await translatorRepository.GetAll()
-            .Select(t => new TranslatorDto(t.Id, t.Name, t.HourlyRate))
-            .FirstOrDefaultAsync(t => t.Name == name);
+            .Where(t => t.Name == name)
+            .Select(t => new TranslatorDto(t.Id, t.Name, t.HourlyRate, t.Status))
+            .FirstOrDefaultAsync();
 
         return result;
     }
@@ -44,11 +45,9 @@ public class TranslatorService : BaseService, ITranslatorService
             createTranslatorDto.CreditCardNumber);
 
         translatorRepository.Add(translator);
-        var result = await unitOfWork.CommitAsync();
-        // TODO: Je toto ok?
-        //return result > 0;
+        await unitOfWork.CommitAsync();
 
-        return new TranslatorDto(translator.Id, translator.Name, translator.HourlyRate);
+        return new TranslatorDto(translator.Id, translator.Name, translator.HourlyRate, translator.Status);
     }
 
     public async Task<TranslatorDto> UpdateStatusAsync(int translatorId, TranslatorStatus status)
@@ -57,14 +56,14 @@ public class TranslatorService : BaseService, ITranslatorService
 
         if (translator == null)
         {
+            // Omitting custom exception for the sake of simplicity, otherwise i would create them in domain layer and map to according http statuses in api project
             throw new Exception();
         }
 
-        // Check if status is null?
         translator.SetStatus(status);
         await unitOfWork.CommitAsync();
 
-        return new TranslatorDto(translator.Id, translator.Name, translator.HourlyRate);
+        return new TranslatorDto(translator.Id, translator.Name, translator.HourlyRate, translator.Status);
     }
 
     public async Task<List<TranslationJobDto>> GetTranslatorJobsAsync(int translatorId)

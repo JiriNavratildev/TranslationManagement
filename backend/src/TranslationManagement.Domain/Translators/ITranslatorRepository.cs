@@ -1,6 +1,6 @@
-using TranslationManagerClean.Domain.Common;
+using TranslationManagement.Domain.Common;
 
-namespace TranslationManagerClean.Domain.Translators;
+namespace TranslationManagement.Domain.Translators;
 
 public interface ITranslatorRepository : IRepository<Translator>
 {

@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using TranslationManagerClean.Domain.Translators;
+using TranslationManagement.Domain.Translators;
 
 namespace TranslationManagement.Application.Translators.Dtos;
 
@@ -18,11 +18,11 @@ public sealed record CreateTranslatorDto : IValidatableObject
                 new[] { nameof(Name) });
         }
         
-        if (HourlyRate < 1)
+        if (HourlyRate < 0)
         {
             yield return new ValidationResult(
-                "Name must be positive number",
-                new[] { nameof(Name) });
+                "HourlyRate must be positive number",
+                new[] { nameof(HourlyRate) });
         }
     }
 }

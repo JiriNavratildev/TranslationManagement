@@ -1,6 +1,6 @@
-using TranslationManagerClean.Domain.Common;
+using TranslationManagement.Domain.Common;
 
-namespace TranslationManagerClean.Domain.TranslationJobs.Rules;
+namespace TranslationManagement.Domain.TranslationJobs.Rules;
 
 public class PriceMustBeWithinRangeRule : IBusinessRule
 {

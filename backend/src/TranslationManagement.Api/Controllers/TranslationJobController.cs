@@ -43,6 +43,8 @@ public class TranslationJobController : ControllerBase
         return Ok(result);
     }
 
+    // I would consider to have separated endpoint for file upload and file process
+    
     // POST: api/translation-jobs/from-file
     [HttpPost("from-file")]
     public async Task<ActionResult<TranslationJobDto>> CreateFromFile(IFormFile file, string customerName)
@@ -71,6 +73,7 @@ public class TranslationJobController : ControllerBase
     [HttpPost("{jobId:int}/translators/{translatorId:int}")]
     public async Task<IActionResult> AssignTranslator(int jobId, int translatorId)
     {
+        // I should return some result, but skipping it for now
         await translationJobService.AssignTranslatorAsync(jobId, translatorId);
         return Ok();
     }

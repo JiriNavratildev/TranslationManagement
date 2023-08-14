@@ -37,7 +37,7 @@ public class TranslatorController : ControllerBase
         return Ok(result);
     }
     
-    // PUT: api/translators/{id}/status
+    // PUT: api/translators/{translatorId}/status
     [HttpPut("{translatorId}/status")]
     public async Task<ActionResult<TranslatorDto>> ChangeTranslatorStatus(int translatorId, UpdateTranslatorStatusDto request)
     {
@@ -45,6 +45,7 @@ public class TranslatorController : ControllerBase
         return Ok(result);
     }
 
+    // PUT: api/translators/{translatorId}/jobs
     [HttpGet("{translatorId}/jobs")]
     public async Task<ActionResult<List<TranslatorDto>>> GetTranslatorJobs(int translatorId)
     {

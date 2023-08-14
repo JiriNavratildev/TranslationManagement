@@ -1,4 +1,4 @@
-namespace TranslationManagerClean.Domain.Common;
+namespace TranslationManagement.Domain.Common;
 
 public interface IRepository<T> where T: BaseEntity
 {

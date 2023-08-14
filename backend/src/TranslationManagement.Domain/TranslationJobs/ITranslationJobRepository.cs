@@ -1,6 +1,6 @@
-using TranslationManagerClean.Domain.Common;
+using TranslationManagement.Domain.Common;
 
-namespace TranslationManagerClean.Domain.TranslationJobs;
+namespace TranslationManagement.Domain.TranslationJobs;
 
 public interface ITranslationJobRepository : IRepository<TranslationJob>
 {

@@ -1,9 +1,8 @@
-using TranslationManagement.Domain.TranslationJobs;
-using TranslationManagerClean.Domain.Common;
-using TranslationManagerClean.Domain.TranslationJobs.Rules;
-using TranslationManagerClean.Domain.Translators;
+using TranslationManagement.Domain.Common;
+using TranslationManagement.Domain.TranslationJobs.Rules;
+using TranslationManagement.Domain.Translators;
 
-namespace TranslationManagerClean.Domain.TranslationJobs;
+namespace TranslationManagement.Domain.TranslationJobs;
 
 public class TranslationJob : BaseEntity
 {

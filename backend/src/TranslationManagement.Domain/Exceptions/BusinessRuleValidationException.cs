@@ -1,6 +1,6 @@
-using TranslationManagerClean.Domain.Common;
+using TranslationManagement.Domain.Common;
 
-namespace TranslationManagerClean.Domain.Exceptions;
+namespace TranslationManagement.Domain.Exceptions;
 
 public class BusinessRuleValidationException : Exception
 {

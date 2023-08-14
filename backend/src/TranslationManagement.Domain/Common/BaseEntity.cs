@@ -1,6 +1,6 @@
-using TranslationManagerClean.Domain.Exceptions;
+using TranslationManagement.Domain.Exceptions;
 
-namespace TranslationManagerClean.Domain.Common;
+namespace TranslationManagement.Domain.Common;
 
 public abstract class BaseEntity
 {

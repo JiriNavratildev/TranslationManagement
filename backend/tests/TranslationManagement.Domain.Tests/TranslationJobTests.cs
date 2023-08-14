@@ -1,7 +1,6 @@
 using FluentAssertions;
 using NUnit.Framework;
 using TranslationManagement.Domain.TranslationJobs;
-using TranslationManagerClean.Domain.TranslationJobs;
 
 namespace TranslationManagement.Domain.Tests;
 

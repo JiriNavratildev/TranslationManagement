@@ -1,5 +1,4 @@
 using TranslationManagement.Domain.TranslationJobs;
-using TranslationManagerClean.Domain.TranslationJobs;
 
 namespace TranslationManagement.Application.TranslationJobs.Dtos;
 

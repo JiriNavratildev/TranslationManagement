@@ -1,8 +1,6 @@
-using TranslationManagement.Domain.TranslationJobs;
+namespace TranslationManagement.Domain.TranslationJobs;
 
-namespace TranslationManagerClean.Domain.TranslationJobs;
-
-internal class TranslationJobStateMachine
+public class TranslationJobStateMachine
 {
     private readonly Dictionary<TranslationJobStatus, HashSet<TranslationJobStatus>> validTransitions = new()
     {
